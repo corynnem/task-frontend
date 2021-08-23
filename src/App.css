@@ -1,5 +1,14 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(#E8871E, #EDB458, #D4D4AA);
+  background: background-cover;
+  background-repeat: no-repeat;
+}
+
 .App {
   text-align: center;
+  color: #023047;
+  font-family: 'Dosis', sans-serif;
 }
 
 .App-logo {

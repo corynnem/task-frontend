@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Auth  from './Components/Auth/Auth';
+import Splash from './Components/Splash'
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [sessionToken, setSessionToken] = useState('')
+    // useEffect(() => {
+      
+    //   let stored = localStorage.setItem('token')
+
+    // })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        sessionToken ? <Splash setLoggedIn={setLoggedIn} setSessionToken={setSessionToken}/> :  <Auth  setSessionToken={setSessionToken} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+      }
     </div>
   );
 }
